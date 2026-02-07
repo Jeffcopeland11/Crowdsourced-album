@@ -316,6 +316,98 @@
       </div>
     </section>
 
+    <!-- Audio & Music Settings (shared across all tabs) -->
+    <section id="audio-settings-section" class="card audio-settings-card">
+      <button class="collapsible-toggle" aria-expanded="false">
+        <span class="toggle-icon">&#9654;</span> Audio &amp; Music Settings
+      </button>
+      <div class="collapsible-content" hidden>
+        <!-- Voice Narration Settings -->
+        <div class="audio-group">
+          <h3 class="audio-group-title">Voice Narration (ElevenLabs)</h3>
+          <p class="audio-group-desc">Have your prayer read aloud by a voice of your choosing.</p>
+          <div class="form-group">
+            <label class="toggle-row">
+              <input type="checkbox" id="tts-enabled"> Enable Voice Narration
+            </label>
+          </div>
+          <div id="tts-options" class="sub-options" hidden>
+            <div class="form-group">
+              <label for="voice-select">Voice</label>
+              <select id="voice-select">
+                <option value="">-- Loading voices... --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="voice-preview-btn">Preview</label>
+              <button class="btn-secondary btn-small" id="voice-preview-btn" disabled>Play Sample</button>
+              <audio id="voice-preview-audio" preload="none"></audio>
+            </div>
+            <div class="form-group">
+              <label for="tts-model">Model</label>
+              <select id="tts-model">
+                <option value="eleven_multilingual_v2">Multilingual v2 (Best Quality)</option>
+                <option value="eleven_turbo_v2_5">Turbo v2.5 (Faster)</option>
+                <option value="eleven_monolingual_v1">English v1 (Classic)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="voice-stability">Stability: <span id="stability-value">0.50</span></label>
+              <input type="range" id="voice-stability" min="0" max="1" step="0.05" value="0.50">
+              <div class="range-labels"><span>More variable</span><span>More stable</span></div>
+            </div>
+            <div class="form-group">
+              <label for="voice-similarity">Clarity + Similarity: <span id="similarity-value">0.75</span></label>
+              <input type="range" id="voice-similarity" min="0" max="1" step="0.05" value="0.75">
+              <div class="range-labels"><span>More natural</span><span>More precise</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frequency Music Settings -->
+        <div class="audio-group">
+          <h3 class="audio-group-title">Background Frequency Music</h3>
+          <p class="audio-group-desc">Play a healing Solfeggio frequency during or after your prayer.</p>
+          <div class="form-group">
+            <label class="toggle-row">
+              <input type="checkbox" id="freq-enabled"> Enable Background Frequency
+            </label>
+          </div>
+          <div id="freq-options" class="sub-options" hidden>
+            <div class="form-group">
+              <label for="frequency-select">Healing Frequency</label>
+              <select id="frequency-select">
+                <option value="174">174 Hz &mdash; Foundation &amp; Pain Relief</option>
+                <option value="285">285 Hz &mdash; Healing &amp; Cellular Repair</option>
+                <option value="396">396 Hz &mdash; Liberation from Guilt &amp; Fear</option>
+                <option value="417">417 Hz &mdash; Cleansing Trauma &amp; Change</option>
+                <option value="432">432 Hz &mdash; Universal Harmony</option>
+                <option value="528" selected>528 Hz &mdash; Transformation &amp; Miracles</option>
+                <option value="639">639 Hz &mdash; Harmonizing Relationships</option>
+                <option value="741">741 Hz &mdash; Spiritual Awakening &amp; Intuition</option>
+                <option value="852">852 Hz &mdash; Returning to Spiritual Order</option>
+                <option value="963">963 Hz &mdash; Divine Consciousness &amp; Oneness</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="freq-texture">Sound Texture</label>
+              <select id="freq-texture">
+                <option value="pure">Pure Tone</option>
+                <option value="warm" selected>Warm Layered (with harmonics)</option>
+                <option value="binaural">Binaural Beats (use headphones)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="freq-volume">Volume: <span id="freq-volume-value">40%</span></label>
+              <input type="range" id="freq-volume" min="0" max="100" step="5" value="40">
+            </div>
+          </div>
+        </div>
+
+        <p class="audio-note"><em>Note: Only one audio source (voice narration or frequency music) can play at a time.</em></p>
+      </div>
+    </section>
+
     <!-- Prayer Output (shared across all tabs) -->
     <section id="prayer-output" class="prayer-output" hidden>
       <div class="card prayer-card">
@@ -326,6 +418,52 @@
             <button class="btn-icon" id="print-prayer-btn" title="Print prayer">&#128424; Print</button>
           </div>
         </div>
+        <!-- Audio Player Bars -->
+        <div id="audio-player-section" class="audio-player-section" hidden>
+          <!-- TTS Player -->
+          <div id="tts-player" class="player-bar" hidden>
+            <div class="player-label">Voice Narration</div>
+            <div class="player-controls">
+              <button class="player-btn" id="tts-play-btn" title="Play">&#9654;</button>
+              <button class="player-btn" id="tts-pause-btn" title="Pause" hidden>&#10074;&#10074;</button>
+              <div class="player-progress-wrap">
+                <div class="player-time" id="tts-current-time">0:00</div>
+                <input type="range" class="player-progress" id="tts-progress" min="0" max="100" step="0.1" value="0">
+                <div class="player-time" id="tts-duration">0:00</div>
+              </div>
+              <div class="player-speed-group">
+                <button class="player-btn-sm" id="tts-speed-down" title="Slower">&#8722;</button>
+                <span class="player-speed-label" id="tts-speed-label">1.0x</span>
+                <button class="player-btn-sm" id="tts-speed-up" title="Faster">&#43;</button>
+              </div>
+              <button class="player-btn" id="tts-save-btn" title="Download audio">&#128190;</button>
+            </div>
+            <div id="tts-status" class="player-status"></div>
+          </div>
+
+          <!-- Frequency Music Player -->
+          <div id="freq-player" class="player-bar" hidden>
+            <div class="player-label">Frequency Music</div>
+            <div class="player-controls">
+              <button class="player-btn" id="freq-play-btn" title="Play">&#9654;</button>
+              <button class="player-btn" id="freq-pause-btn" title="Pause" hidden>&#10074;&#10074;</button>
+              <div class="player-freq-display">
+                <span id="freq-display-hz">528 Hz</span>
+                <span id="freq-display-name">Transformation &amp; Miracles</span>
+              </div>
+              <div class="player-speed-group">
+                <button class="player-btn-sm" id="freq-speed-down" title="Lower pitch">&#8722;</button>
+                <span class="player-speed-label" id="freq-speed-label">1.0x</span>
+                <button class="player-btn-sm" id="freq-speed-up" title="Higher pitch">&#43;</button>
+              </div>
+              <div class="player-volume-group">
+                <span class="vol-icon">&#128266;</span>
+                <input type="range" class="player-volume" id="freq-player-volume" min="0" max="100" step="5" value="40">
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="prayer-instructions">
           <strong>Instructions:</strong> Stand. Speak out loud. Command with full authority in the name of Jesus Christ.
         </div>
@@ -370,5 +508,6 @@
   </div>
 
   <script src="js/app.js"></script>
+  <script src="js/audio.js"></script>
 </body>
 </html>

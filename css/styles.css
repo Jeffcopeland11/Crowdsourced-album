@@ -586,6 +586,280 @@ blockquote.emergency-prayer {
   margin: 0.5rem 0 1rem 0;
 }
 
+/* === Audio Settings Card === */
+.audio-settings-card {
+  border-left: 4px solid var(--gold);
+}
+
+.audio-group {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.audio-group:last-of-type {
+  border-bottom: none;
+}
+
+.audio-group-title {
+  color: var(--wine);
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.audio-group-desc {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle-row input[type="checkbox"] {
+  accent-color: var(--gold);
+  width: 18px;
+  height: 18px;
+}
+
+.sub-options {
+  padding: 0.75rem 0 0 1rem;
+  border-left: 2px solid var(--cream-dark);
+  margin-top: 0.5rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  appearance: none;
+  background: var(--cream-dark);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--white);
+  box-shadow: 0 1px 4px var(--shadow);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--white);
+  box-shadow: 0 1px 4px var(--shadow);
+  cursor: pointer;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.15rem;
+}
+
+.btn-small {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+}
+
+.audio-note {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+/* === Audio Player Bars === */
+.audio-player-section {
+  margin-bottom: 1.25rem;
+}
+
+.player-bar {
+  background: var(--charcoal);
+  color: var(--cream);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.player-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.player-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: transparent;
+  color: var(--gold-light);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.player-btn:hover {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+.player-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.player-btn-sm {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-dark);
+  background: transparent;
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.player-btn-sm:hover {
+  background: var(--gold-dark);
+  color: var(--white);
+}
+
+.player-progress-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 120px;
+}
+
+.player-progress {
+  flex: 1;
+  height: 4px !important;
+}
+
+.player-progress::-webkit-slider-thumb {
+  width: 12px !important;
+  height: 12px !important;
+  background: var(--gold-light) !important;
+}
+
+.player-progress::-moz-range-thumb {
+  width: 12px !important;
+  height: 12px !important;
+  background: var(--gold-light) !important;
+}
+
+.player-time {
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  min-width: 32px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.player-speed-group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.player-speed-label {
+  font-size: 0.78rem;
+  color: var(--gold-light);
+  min-width: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.player-volume-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 90px;
+}
+
+.player-volume-group .vol-icon {
+  font-size: 0.85rem;
+  color: var(--gold-light);
+}
+
+.player-volume {
+  width: 70px !important;
+  height: 4px !important;
+}
+
+.player-volume::-webkit-slider-thumb {
+  width: 12px !important;
+  height: 12px !important;
+  background: var(--gold-light) !important;
+}
+
+.player-volume::-moz-range-thumb {
+  width: 12px !important;
+  height: 12px !important;
+  background: var(--gold-light) !important;
+}
+
+.player-freq-display {
+  flex: 1;
+  text-align: center;
+  min-width: 100px;
+}
+
+.player-freq-display span:first-child {
+  font-weight: 700;
+  color: var(--gold-light);
+  font-size: 1rem;
+  margin-right: 0.4rem;
+}
+
+.player-freq-display span:last-child {
+  font-size: 0.78rem;
+  color: var(--cream-dark);
+}
+
+.player-status {
+  font-size: 0.78rem;
+  color: var(--gold-dark);
+  margin-top: 0.35rem;
+  min-height: 1.1em;
+}
+
 /* === Footer === */
 .app-footer {
   text-align: center;
@@ -637,6 +911,29 @@ blockquote.emergency-prayer {
     width: 100%;
     text-align: center;
   }
+
+  .player-controls {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .player-progress-wrap {
+    order: 10;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .player-freq-display {
+    min-width: 0;
+  }
+
+  .player-volume-group {
+    min-width: 70px;
+  }
+
+  .sub-options {
+    padding-left: 0.5rem;
+  }
 }
 
 /* === Print Styles === */
@@ -647,7 +944,9 @@ blockquote.emergency-prayer {
   #new-prayer-btn,
   .app-footer,
   .btn-primary,
-  .btn-secondary {
+  .btn-secondary,
+  .audio-settings-card,
+  .audio-player-section {
     display: none !important;
   }
 

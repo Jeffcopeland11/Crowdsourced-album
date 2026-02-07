@@ -448,6 +448,11 @@
     var prayerOutput = document.getElementById("prayer-output");
     prayerOutput.hidden = false;
     prayerOutput.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Notify audio module that a prayer was generated
+    if (window.DeliveranceAudio && window.DeliveranceAudio.onPrayerGenerated) {
+      window.DeliveranceAudio.onPrayerGenerated();
+    }
   }
 
   // ─── Tab Navigation ───

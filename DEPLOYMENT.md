@@ -42,9 +42,11 @@ In the "Environment Variables" section, add the following variables:
 
 | Name | Value |
 |------|-------|
-| `ANTHROPIC_API_KEY` | `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` |
-| `ELEVENLABS_API_KEY` | `sk_bfe4a6b807dd58bae0bed72de14a94a8dca3872c8067cf56` |
-| `MOCKUUUPS_API_KEY` | `A15negHuzTvgyHfFLzvtEMcGvD2jHf6b` |
+| `ANTHROPIC_API_KEY` | Your Anthropic Claude API key (starts with `sk-ant-api03-...`) |
+| `ELEVENLABS_API_KEY` | Your ElevenLabs API key (starts with `sk_...`) |
+| `MOCKUUUPS_API_KEY` | Your Mockuuups.studio API key |
+
+**Note**: Replace the placeholder values with your actual API keys. See the `.env.example` file for the variable names.
 
 **Important**: These environment variables are configured but note that the current application code does not use server-side API calls. If you plan to add backend functionality that uses these APIs, you'll need to create API routes or serverless functions.
 
@@ -62,12 +64,14 @@ In the "Environment Variables" section, add the following variables:
 3. Add your custom domain
 4. Follow the instructions to update your DNS settings
 
-## Team Settings
+## Vercel Account Setup
 
-Your Vercel team information:
-- **User ID**: Aj1JYwJFyGvmnmQ09f9m87JW
-- **Team ID**: team_9QLThROBCGHLk4KsQasDMyuz
-- **Vercel URL**: https://vercel.com/jeff-is-free
+To deploy this application, you'll need:
+- A Vercel account (free tier available)
+- Your GitHub account connected to Vercel
+- Access to your API keys for the services you want to integrate
+
+Visit https://vercel.com to create an account if you don't have one.
 
 ## Post-Deployment
 
@@ -106,12 +110,16 @@ If you need to test with environment variables locally:
 
 1. **Never commit `.env` files** with real API keys to your repository
 2. The `.gitignore` file is configured to exclude all `.env` files
-3. API keys shown in this guide should be rotated if they were exposed publicly
-4. For production applications, consider:
+3. **Keep `VERCEL_SETUP.md` private** - This file contains your actual API keys and is automatically excluded from git commits
+4. **API Key Security**: If you received API keys through a public issue or documentation:
+   - These keys may have been exposed publicly
+   - Rotate/regenerate them immediately after your first deployment
+   - Use Vercel's dashboard to update the environment variables with new keys
+5. For production applications, consider:
    - Rotating the API keys after initial setup
-   - Using Vercel's environment variable encryption
+   - Using Vercel's environment variable encryption (enabled by default)
    - Implementing rate limiting for API calls
-   - Creating a backend API to proxy requests (keeps keys server-side)
+   - Creating a backend API to proxy requests (keeps keys server-side only)
 
 ## Current Application Architecture
 

@@ -7,6 +7,9 @@
 # Vercel
 .vercel
 
+# Private configuration files with API keys
+VERCEL_SETUP.md
+
 # Dependencies
 node_modules/
 

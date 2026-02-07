@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deliverance Toolkit</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-symbol">&#10013;</div>
+      <h1>Deliverance Toolkit</h1>
+      <p class="subtitle">A Christ-Centered Resource for Spiritual Freedom</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="quick-prayer">Standard Prayers</button>
+      <button class="tab-btn" data-tab="custom-prayer">Custom Prayer Builder</button>
+      <button class="tab-btn" data-tab="guided-flow">Guided Session</button>
+    </nav>
+
+    <!-- Tab: Standard Prayers -->
+    <section id="quick-prayer" class="tab-content active">
+      <div class="card">
+        <h2>Select a Standard Prayer</h2>
+        <p class="card-description">Choose a pre-written prayer template. You can optionally personalize it with your details below.</p>
+
+        <div class="form-group">
+          <label for="standard-prayer-select">Prayer Type</label>
+          <select id="standard-prayer-select">
+            <option value="">-- Select a Prayer --</option>
+            <option value="general-deliverance">General Deliverance Prayer</option>
+            <option value="cord-cutting">Cord Cutting &amp; Relationship Severance</option>
+            <option value="entity-expulsion">Entity / Spirit Expulsion</option>
+            <option value="portal-closing">Portal &amp; Backdoor Closing</option>
+            <option value="protective-shielding">Protective Shielding &amp; Covering</option>
+            <option value="soul-retrieval">Soul Fragment Retrieval</option>
+            <option value="contract-renunciation">Contract &amp; Agreement Renunciation</option>
+            <option value="sovereignty-declaration">Declaration of Sovereignty</option>
+            <option value="full-deliverance">Full Comprehensive Deliverance (All Phases)</option>
+          </select>
+        </div>
+
+        <!-- Optional personalization for standard prayers -->
+        <div class="collapsible-section">
+          <button class="collapsible-toggle" aria-expanded="false">
+            <span class="toggle-icon">&#9654;</span> Personalize This Prayer (Optional)
+          </button>
+          <div class="collapsible-content" hidden>
+            <div class="form-group">
+              <label for="std-user-name">Your Name</label>
+              <input type="text" id="std-user-name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="std-people">People to Sever Ties From</label>
+              <input type="text" id="std-people" placeholder="e.g., person A, person B (comma-separated)">
+            </div>
+            <div class="form-group">
+              <label for="std-places">Places or Events Involved</label>
+              <input type="text" id="std-places" placeholder="e.g., a ceremony, a location, a gathering">
+            </div>
+            <div class="form-group">
+              <label for="std-afflictions">Spirits / Afflictions to Address</label>
+              <input type="text" id="std-afflictions" placeholder="e.g., fear, anger, jealousy, confusion">
+            </div>
+            <div class="form-group">
+              <label for="std-goals">Intended Outcome / Goals</label>
+              <input type="text" id="std-goals" placeholder="e.g., freedom, peace, clarity, restoration">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="generate-standard-btn">Generate Prayer</button>
+      </div>
+    </section>
+
+    <!-- Tab: Custom Prayer Builder -->
+    <section id="custom-prayer" class="tab-content">
+      <div class="card">
+        <h2>Custom Prayer Builder</h2>
+        <p class="card-description">Build a personalized deliverance prayer by filling in the fields below. Select which phases to include and provide details specific to your situation.</p>
+
+        <div class="form-group">
+          <label for="custom-user-name">Your Name <span class="required">*</span></label>
+          <input type="text" id="custom-user-name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="custom-situation">Describe Your Situation</label>
+          <textarea id="custom-situation" rows="4" placeholder="Briefly describe what happened, what you were exposed to, or what you need deliverance from. This helps generate a prayer tailored to your specific circumstances."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="custom-people">People to Sever Ties From</label>
+          <input type="text" id="custom-people" placeholder="Comma-separated names or descriptions (e.g., a facilitator, a former partner)">
+        </div>
+
+        <div class="form-group">
+          <label for="custom-places">Places, Events, or Practices Involved</label>
+          <input type="text" id="custom-places" placeholder="e.g., a retreat, a ceremony, a specific location">
+        </div>
+
+        <div class="form-group">
+          <label>Spirits / Afflictions to Expel</label>
+          <div class="checkbox-grid" id="affliction-checkboxes">
+            <label class="checkbox-label"><input type="checkbox" value="Fear"> Fear</label>
+            <label class="checkbox-label"><input type="checkbox" value="Anger"> Anger</label>
+            <label class="checkbox-label"><input type="checkbox" value="Jealousy"> Jealousy</label>
+            <label class="checkbox-label"><input type="checkbox" value="Resentment"> Resentment</label>
+            <label class="checkbox-label"><input type="checkbox" value="Envy"> Envy</label>
+            <label class="checkbox-label"><input type="checkbox" value="Pride"> Pride</label>
+            <label class="checkbox-label"><input type="checkbox" value="Shame"> Shame</label>
+            <label class="checkbox-label"><input type="checkbox" value="Guilt"> Guilt</label>
+            <label class="checkbox-label"><input type="checkbox" value="Deception"> Deception</label>
+            <label class="checkbox-label"><input type="checkbox" value="Confusion"> Confusion</label>
+            <label class="checkbox-label"><input type="checkbox" value="Lust"> Lust</label>
+            <label class="checkbox-label"><input type="checkbox" value="Betrayal"> Betrayal</label>
+            <label class="checkbox-label"><input type="checkbox" value="False Light"> False Light</label>
+            <label class="checkbox-label"><input type="checkbox" value="Witchcraft"> Witchcraft</label>
+            <label class="checkbox-label"><input type="checkbox" value="Infirmity"> Infirmity</label>
+            <label class="checkbox-label"><input type="checkbox" value="Addiction"> Addiction</label>
+            <label class="checkbox-label"><input type="checkbox" value="Depression"> Depression</label>
+            <label class="checkbox-label"><input type="checkbox" value="Anxiety"> Anxiety</label>
+          </div>
+          <div class="form-group" style="margin-top: 0.5rem;">
+            <input type="text" id="custom-afflictions-other" placeholder="Other spirits/afflictions (comma-separated)">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="custom-goals">Intended Outcome / Goals</label>
+          <input type="text" id="custom-goals" placeholder="e.g., complete freedom, restoration, peace, sovereignty">
+        </div>
+
+        <div class="form-group">
+          <label>Phases to Include</label>
+          <div class="checkbox-grid" id="phase-checkboxes">
+            <label class="checkbox-label"><input type="checkbox" value="recognition" checked> Recognition &amp; Confession</label>
+            <label class="checkbox-label"><input type="checkbox" value="cord-cutting" checked> Cord Severing</label>
+            <label class="checkbox-label"><input type="checkbox" value="entity-expulsion" checked> Entity Expulsion</label>
+            <label class="checkbox-label"><input type="checkbox" value="network-destruction" checked> Network Destruction</label>
+            <label class="checkbox-label"><input type="checkbox" value="backdoor-closing" checked> Backdoor / Portal Closing</label>
+            <label class="checkbox-label"><input type="checkbox" value="hebrew-seal"> Hebrew SAGAR Seal</label>
+            <label class="checkbox-label"><input type="checkbox" value="12d-shielding"> 12D Krystal Star Shielding</label>
+            <label class="checkbox-label"><input type="checkbox" value="blood-covering" checked> Blood of Christ Covering</label>
+            <label class="checkbox-label"><input type="checkbox" value="sovereignty" checked> Declaration of Sovereignty</label>
+            <label class="checkbox-label"><input type="checkbox" value="contract-renunciation"> Contract Renunciation</label>
+            <label class="checkbox-label"><input type="checkbox" value="soul-retrieval"> Soul Fragment Retrieval</label>
+            <label class="checkbox-label"><input type="checkbox" value="closing-seal" checked> Gratitude &amp; Closing Seal</label>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="generate-custom-btn">Generate Custom Prayer</button>
+      </div>
+    </section>
+
+    <!-- Tab: Guided Flow -->
+    <section id="guided-flow" class="tab-content">
+      <div class="card">
+        <h2>Guided Deliverance Session</h2>
+        <p class="card-description">Answer a short series of questions and we will build a personalized prayer for you.</p>
+
+        <!-- Step indicators -->
+        <div class="step-indicators" id="step-indicators">
+          <span class="step-dot active" data-step="1">1</span>
+          <span class="step-dot" data-step="2">2</span>
+          <span class="step-dot" data-step="3">3</span>
+          <span class="step-dot" data-step="4">4</span>
+          <span class="step-dot" data-step="5">5</span>
+          <span class="step-dot" data-step="6">6</span>
+        </div>
+
+        <!-- Step 1: What brings you here -->
+        <div class="guided-step active" data-step="1">
+          <h3>What brings you here today?</h3>
+          <p class="step-description">Select all that apply:</p>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="ceremony"> I attended a ceremony, ritual, or spiritual practice that left me feeling unclean or oppressed
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="relationship"> I need to sever spiritual ties to a person or group
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="entities"> I sense entities, spirits, or oppressive presences affecting me
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="emotions"> I am overwhelmed by emotions that do not feel like my own (jealousy, rage, shame, etc.)
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="protection"> I want to strengthen my spiritual protection and shielding
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="contracts"> I want to renounce agreements or contracts made consciously or unconsciously
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="wholeness"> I feel fragmented and want to reclaim lost parts of myself
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="reason" value="general"> General spiritual cleansing and deliverance
+            </label>
+          </div>
+          <div class="step-nav">
+            <button class="btn-secondary" disabled>Back</button>
+            <button class="btn-primary guided-next" data-next="2">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Your identity -->
+        <div class="guided-step" data-step="2">
+          <h3>Tell us about yourself</h3>
+          <div class="form-group">
+            <label for="guided-name">Your Name</label>
+            <input type="text" id="guided-name" placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="guided-identity">How do you identify spiritually?</label>
+            <textarea id="guided-identity" rows="2" placeholder="e.g., a child of God, a servant of Christ, a believer, a healer"></textarea>
+          </div>
+          <div class="step-nav">
+            <button class="btn-secondary guided-prev" data-prev="1">Back</button>
+            <button class="btn-primary guided-next" data-next="3">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: The situation -->
+        <div class="guided-step" data-step="3">
+          <h3>Describe your situation</h3>
+          <p class="step-description">Share as much or as little as you are comfortable with. This helps personalize your prayer.</p>
+          <div class="form-group">
+            <label for="guided-situation">What happened?</label>
+            <textarea id="guided-situation" rows="4" placeholder="Describe the event, experience, relationship, or practice that led to your need for deliverance."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="guided-people">Are there specific people involved?</label>
+            <input type="text" id="guided-people" placeholder="Comma-separated (e.g., a facilitator, a partner, group members)">
+          </div>
+          <div class="form-group">
+            <label for="guided-places">Are there specific places or events?</label>
+            <input type="text" id="guided-places" placeholder="e.g., a retreat center, a church, a gathering">
+          </div>
+          <div class="step-nav">
+            <button class="btn-secondary guided-prev" data-prev="2">Back</button>
+            <button class="btn-primary guided-next" data-next="4">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 4: What to clear -->
+        <div class="guided-step" data-step="4">
+          <h3>What needs to be cleared?</h3>
+          <p class="step-description">Select the spirits, emotions, or afflictions you want addressed:</p>
+          <div class="checkbox-grid" id="guided-afflictions">
+            <label class="checkbox-label"><input type="checkbox" value="Fear"> Fear</label>
+            <label class="checkbox-label"><input type="checkbox" value="Anger"> Anger</label>
+            <label class="checkbox-label"><input type="checkbox" value="Jealousy"> Jealousy</label>
+            <label class="checkbox-label"><input type="checkbox" value="Resentment"> Resentment</label>
+            <label class="checkbox-label"><input type="checkbox" value="Envy"> Envy</label>
+            <label class="checkbox-label"><input type="checkbox" value="Pride"> Pride</label>
+            <label class="checkbox-label"><input type="checkbox" value="Shame"> Shame</label>
+            <label class="checkbox-label"><input type="checkbox" value="Guilt"> Guilt</label>
+            <label class="checkbox-label"><input type="checkbox" value="Deception"> Deception</label>
+            <label class="checkbox-label"><input type="checkbox" value="Confusion"> Confusion</label>
+            <label class="checkbox-label"><input type="checkbox" value="Lust"> Lust</label>
+            <label class="checkbox-label"><input type="checkbox" value="Betrayal"> Betrayal</label>
+            <label class="checkbox-label"><input type="checkbox" value="False Light"> False Light</label>
+            <label class="checkbox-label"><input type="checkbox" value="Witchcraft"> Witchcraft</label>
+            <label class="checkbox-label"><input type="checkbox" value="Infirmity"> Infirmity</label>
+            <label class="checkbox-label"><input type="checkbox" value="Addiction"> Addiction</label>
+            <label class="checkbox-label"><input type="checkbox" value="Depression"> Depression</label>
+            <label class="checkbox-label"><input type="checkbox" value="Anxiety"> Anxiety</label>
+          </div>
+          <div class="form-group" style="margin-top: 0.5rem;">
+            <input type="text" id="guided-afflictions-other" placeholder="Other (comma-separated)">
+          </div>
+          <div class="step-nav">
+            <button class="btn-secondary guided-prev" data-prev="3">Back</button>
+            <button class="btn-primary guided-next" data-next="5">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Protection & goals -->
+        <div class="guided-step" data-step="5">
+          <h3>Protection &amp; Goals</h3>
+          <div class="form-group">
+            <label>Which protection layers do you want?</label>
+            <div class="checkbox-grid">
+              <label class="checkbox-label"><input type="checkbox" name="protection" value="blood-covering" checked> Blood of Christ Covering</label>
+              <label class="checkbox-label"><input type="checkbox" name="protection" value="hebrew-seal"> Hebrew SAGAR Seal</label>
+              <label class="checkbox-label"><input type="checkbox" name="protection" value="12d-shielding"> 12D Krystal Star Shield</label>
+              <label class="checkbox-label"><input type="checkbox" name="protection" value="sovereignty"> Declaration of Sovereignty</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="guided-goals">What is your desired outcome?</label>
+            <textarea id="guided-goals" rows="2" placeholder="e.g., complete freedom, spiritual clarity, peace, restoration of wholeness"></textarea>
+          </div>
+          <div class="step-nav">
+            <button class="btn-secondary guided-prev" data-prev="4">Back</button>
+            <button class="btn-primary guided-next" data-next="6">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 6: Review & Generate -->
+        <div class="guided-step" data-step="6">
+          <h3>Review &amp; Generate</h3>
+          <p class="step-description">Review your selections below. When ready, generate your personalized deliverance prayer.</p>
+          <div id="guided-review" class="review-summary"></div>
+          <div class="step-nav">
+            <button class="btn-secondary guided-prev" data-prev="5">Back</button>
+            <button class="btn-primary" id="generate-guided-btn">Generate Prayer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prayer Output (shared across all tabs) -->
+    <section id="prayer-output" class="prayer-output" hidden>
+      <div class="card prayer-card">
+        <div class="prayer-header">
+          <h2 id="prayer-title">Your Deliverance Prayer</h2>
+          <div class="prayer-actions">
+            <button class="btn-icon" id="copy-prayer-btn" title="Copy to clipboard">&#128203; Copy</button>
+            <button class="btn-icon" id="print-prayer-btn" title="Print prayer">&#128424; Print</button>
+          </div>
+        </div>
+        <div class="prayer-instructions">
+          <strong>Instructions:</strong> Stand. Speak out loud. Command with full authority in the name of Jesus Christ.
+        </div>
+        <div id="prayer-text" class="prayer-text"></div>
+
+        <!-- Post-Prayer Guidance -->
+        <div class="post-prayer" id="post-prayer-section">
+          <h3>After Speaking This Prayer - Immediate Actions</h3>
+          <ol class="action-list">
+            <li>Drink a full glass of water (flush released residue)</li>
+            <li>Eat something with salt (ground your body)</li>
+            <li>Take a shower (wash off released energy - imagine it going down the drain)</li>
+            <li>Stomp your feet 3 times (ground into the earth)</li>
+            <li>Clap your hands 3 times (break any remaining frequency)</li>
+            <li>Speak aloud: <em>"I am [your name]. I am here. I am clear. I am free."</em></li>
+          </ol>
+
+          <h3>Confirmation Testing</h3>
+          <p>Use muscle testing or prayerful confirmation for each statement:</p>
+          <ul class="confirmation-list" id="confirmation-list"></ul>
+
+          <h3>Daily Maintenance (Next 7 Days)</h3>
+          <p>Speak this every morning:</p>
+          <blockquote class="daily-prayer" id="daily-maintenance-prayer"></blockquote>
+
+          <h3>If You Feel Resistance Returning</h3>
+          <p>Immediately speak:</p>
+          <blockquote class="emergency-prayer">
+            "In the name of Jesus Christ: [Spirit name], you are EXPELLED. You were cast out. You are BOUND. You CANNOT return. OUT NOW."
+          </blockquote>
+        </div>
+
+        <button class="btn-secondary" id="new-prayer-btn">Create Another Prayer</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>All prayers are generated for personal use. Stand in the authority of Christ.</p>
+      <p class="footer-verse">"And these signs shall follow them that believe; In my name shall they cast out devils." &mdash; Mark 16:17</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
